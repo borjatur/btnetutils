@@ -31,7 +31,7 @@ setup(
     description="some useful net utils",
     entry_points={
         'console_scripts': [
-            'btnetutils=btnetutils.cli:main',
+            'btnet=btnetutils.cli:btnet',
         ],
     },
     install_requires=requirements,

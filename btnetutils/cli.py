@@ -1,16 +1,22 @@
 """Console script for btnetutils."""
 import sys
 import click
+from btnetutils.btnetutils import get_my_ip
 
 
-@click.command()
-def main(args=None):
-    """Console script for btnetutils."""
-    click.echo("Replace this message by putting your code into "
-               "btnetutils.cli.main")
-    click.echo("See click documentation at https://click.palletsprojects.com/")
-    return 0
+@click.group()
+def btnet(args=None):
+    """
+    Simple CLI for dealing with net configs
+    """
+    pass
 
+@btnet.command()
+def ip():
+    """
+    return your current external ip
+    """
+    click.echo(get_my_ip())
 
 if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+    sys.exit(btnet())
